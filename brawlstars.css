@@ -1,0 +1,13 @@
+.bg-black{
+    background-color: black;
+}
+.navbar-nav{
+    font-size: 35px;
+}
+.nav-link{
+    color: gray;
+
+}
+.nav-link:hover{
+    color: white;
+}

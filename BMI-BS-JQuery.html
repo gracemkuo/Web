@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>BMI-BS-Jquery</title>
+    <script>
+        function Show(msg) {
+            $('#result').html(msg + "<br />");
+        }
+
+        $(function () {
+            $('#Button1').click(function (e) {
+                var textHeight = $('#textHeight').val();
+                var textWeight = $('#textWeight').val();
+                textHeight = textHeight / 100;
+                var BMI = textWeight / (textHeight * textHeight);
+                Show(BMI);
+            });
+        })
+
+        $(() => {
+            $('#CheckAll').click(function (e) {
+                if ($("#CheckAll").prop('checked')) {
+
+                    $("input[type = 'checkbox']").prop('checked', true);
+                }
+                else{
+                    $("input[type = 'checkbox']").prop('checked', false);
+ 
+                }
+
+
+
+            })
+        })
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="row" style="margin:10px">
+        <div class="col-6">
+            <h1>BMI計算(改成jQuery版本)</h1>
+            <label>身高:</label>
+            <input class="form-control" id="textHeight" value="0" />
+            <label>體重:</label>
+            <input class="form-control" id="textWeight" value="0" />
+            <br />
+            <button class="btn btn-primary" id="Button1">計算</button>
+            <br />
+            <span id="result">結果:</span>
+        </div>
+    </div>
+    <div class="row" style="margin:10px">
+        <div class="col-12">
+            <input id="CheckAll" type="checkbox" />勾選全部
+            <div id="CheckBoxGroup">
+                <input type="checkbox" />項目1
+                <input type="checkbox" />項目2
+                <input type="checkbox" />項目3
+                <input type="checkbox" />項目4
+                <input type="checkbox" />項目5
+                <input type="checkbox" />項目6
+                <input type="checkbox" />項目7
+                <input type="checkbox" />項目8
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
