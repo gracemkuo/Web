@@ -5,7 +5,23 @@
     <meta charset="UTF-8">
     <title>Build School</title>
     <link rel="stylesheet" href="stylesheet/style.css">
-</head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+        <script>
+        $(function(){
+            if($(".menu-btn").is(":visible")){
+                $(".heaeder-menu").hide();
+                $(".menu-btn").on("click", function(){
+                    $(".header-menu").toggle();
+                });
+            }
+        });
+        </script>
+    </head>
 
 <body>
 
@@ -13,6 +29,9 @@
         <nav class="container">
             <a class="logo" herf="#">Build School</a>
             <div class="menu">
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul class="header-menu">
                     <li><a href="#">Intro</a></li>
                     <li><a href="#">Services</a></li>
@@ -43,7 +62,7 @@
                     <div class="item">
                         <div>
                             <div class="item-body">
-                                <h4>Frondend</h4>
+                                <h4>前端</h4>
                                 <h3>HTML, CSS and JS framework.</h3>
                             </div>
                             <div class="item-footer">
@@ -54,7 +73,7 @@
                     <div class="item">
                         <div>
                             <div class="item-body">
-                                <h4>Backend</h4>
+                                <h4>後端</h4>
                                 <h3>C#, Python and Kotlin.</h3>
                             </div>
                             <div class="item-footer">
@@ -65,7 +84,7 @@
                     <div class="item">
                         <div>
                             <div class="item-body">
-                                <h4>Full Stack</h4>
+                                <h4>整個學程</h4>
                                 <h3>Boss'favorite employee.</h3>
                             </div>
                             <div class="item-footer">
@@ -112,7 +131,7 @@
                         <span><i class="fa fa-lock"></i></span>
                         <input type="text" name="" id="" placeholder="Create your password">
                     </div>
-                </div>
+              
                 <div>
                     <div class="input-div">
                         <span><i class="fa fa-phone"></i></span>
