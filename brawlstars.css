@@ -6,8 +6,37 @@
 }
 .nav-link{
     color: gray;
-
+font-size:60%;
 }
 .nav-link:hover{
     color: white;
 }
+.card{
+    height: 100%;
+}
+.bottomtop>h4{
+    color: white;
+}
+.row3{
+    color: white;
+    display: flex;
+}
+.carousel-item{
+    height: 600px;
+    overflow: hidden;
+    
+}
+.ml-1{
+    color: white;
+}
+.icon{
+    color: white;
+}
+
+
+/* .test_info{
+    background-image: url('https://cdn.unwire.hk/wp-content/uploads/2018/11/brawl-stars-950x436.png');
+    background-position: center center;
+    padding: 0;
+    background-repeat: no-repeat;
+} */
