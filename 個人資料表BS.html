@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form BS</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        //getElementById(抓取頁面上的元素)
+        function getElement(name) {
+            return document.getElementById(name);
+        }
+
+        //判斷是否可以送件
+        function Button_Submit() {
+            //抓取頁面上的checkboc1，取得是否checked
+            var isChecked = getElement('MustCheck').checked;
+            //如果是，就return true
+            if (isChecked) return true;
+            //否則就... 
+            alert('必須勾選同意!');
+            return false;
+        }
+
+        //當網頁載入完成後執行
+        window.onload = function () {
+            //hook event(在form1被submit時...)
+            getElement('body').onsubmit = function () {
+                //呼叫 Button_Submit()
+                return Button_Submit();
+            };
+        };
+    </script>
+</head>
+
+<body
+    action=" http://isbaas.azurewebsites.net/WebForms/Form2Mail.aspx?mailto=gracemkuo841210@gmail.com&redirect=http://www.google.com"
+    method="POST">
+
+    <div class="container ">
+        <div class="row mb-2 mt-2 ">
+            <div class="col-6">
+                <div class="card " style="height: 305px">
+                    <div class="card-header  bg-primary text-white">個人資料--<i>基本</i></div>
+                    <div class="card-body">
+                        <form action="/action_page.php">
+                            <div class="form-group">
+                                <label for="name">姓名:</label>
+                                <input type="name" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">密碼:</label>
+                                <input type="password" class="form-control" id="pwd">
+                            </div>
+                            <label>性別:</label>
+                            <div class="form-check-inline">
+
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio">男生
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio">女生
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card ">
+                    <div class="card-header  bg-primary text-white" mb-5>個人資料</div>
+                    <div class="card  " style="height: 255px">
+                        <form action="/action_page.php">
+                            <label for="name">興趣:</label>
+
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="">音樂
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="">運動
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="" disabled>閱讀
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="" disabled>電影
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea2">專長</label>
+                                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2"
+                                    rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-6 mb-2 mt-2">
+            <div class="card">
+                <div class="card-header  bg-primary text-white">個人資料--<i>地址</i></div>
+                <div class="card-body"> <label>郵遞區號：</label>
+                    <input id="label_Postalcode" name="Postal code" type="text" /><br />
+                    <br />
+                    <label>縣市：</label>
+                    <select name="city">
+                        <option value="TPC" selected>台北市</option>
+                        <option value="NTPC">新北市</option>
+                        <option value="桃園">桃園</option>
+                        <option value="新竹">新竹</option>
+                    </select>
+                    <label>地址：</label>
+                    <input name="txt_address" type="text" /> </div> </div> </div> 
+                
+                    <div>
+                            <input type="checkbox" id="MustCheck" name="MustCheck"> 同意使用個資...
+                            <br> <br>
+                            <input class="btn btn-primary" id="submit" type="submit" value="送出" />&nbsp;
+                            <input class="btn btn-primary" id="reset" type="reset" value="清除" />
+                        </div>
+                
+                </body> </html>
