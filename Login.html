@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        //getElementById(抓取頁面上的元素)
+        function getElement(checkbox) {
+            return document.getElementById(checkbox);
+        }
+
+        //判斷是否可以送件
+        function Button_Submit() {
+            //抓取頁面上的checkboc1，取得是否checked
+            var isChecked = getElement('check').checked;
+            //如果是，就return true
+            if (isChecked)
+                return true;
+            //否則就... 
+            alert('請勾選同意使用條款，或 註冊帳號。');
+            return false;
+        }
+
+        //當網頁載入完成後執行
+        window.onload = function () {
+            //hook event(在form1被submit時...)
+            getElement('body').onsubmit = function () {
+                //呼叫 Button_Submit()
+                return Button_Submit();
+            };
+        };
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3 ">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        登入系統
+                    </div>
+                    <div class="card-body">
+                        <div class=" d-flex justify-content-end">
+                            <button type="button" class="btn btn-danger">註冊新帳號</button>
+                        </div>
+                        <span>帳號</span>
+                        <div class="input-group mb-3 mt-3">
+                            <input type="text" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <span>密碼</span>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input">
+                            <input type="checkbox" id="check" name="checkbox">
+                            <label for="agree">勾選表示我同意此系統之<a data-toggle="modal" href="#signup"> 使用條款 </a>
+                            </label>
+                        </div>
+                        <a class="btn btn-primary align-content-center" onclick="Button_Submit()" href="#" role="button">登入</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
