@@ -32,9 +32,9 @@
 
                     $("input[type = 'checkbox']").prop('checked', true);
                 }
-                else{
+                else {
                     $("input[type = 'checkbox']").prop('checked', false);
- 
+
                 }
 
 
@@ -44,7 +44,53 @@
 
     </script>
 
+    <style>
+        .br15 {
+            border-radius: 15px;
+        }
 
+        .br30 {
+            border-radius: 30px;
+        }
+
+        .br50 {
+            border-radius: 50px;
+        }
+    </style>
+
+    <script>
+
+
+        function change1() {
+            var value = $(this).val();
+            $('#ImgGroup2 img').removeClass();
+            $('#ImgGroup2 img').addClass(value);
+        }
+
+        // val是所選擇 option的value，找imggroup2中的所有圖片，this當前執行的選項 change1執行sel01的change事件
+
+        $(document).ready(function () {
+            $('#sel01').change(change1);
+        })
+
+// 當sel01改變的時候，執行change1程式碼，
+   
+
+
+        $(document).ready(function () {
+            $('img').hover(function () {
+                $(this).css("cursor", "pointer");
+                $(this).css("transform", "scale(1.1)").css("transition-duration")},
+                function () {
+                     $(this).css("transform", "scale(1)").css("transition-duration")
+                
+    });
+
+            $('#sel01').change(change1);
+        });
+
+
+    </script>
 
 </head>
 
@@ -78,7 +124,25 @@
         </div>
     </div>
 
+    <div id="ImgGroup2" class="row" style="margin:10px; padding-top:100px">
+        <div class="col-12 mb-3">
+            <select id="sel01">
+                <option value="br15">15px</option>
+                <option value="br30">30px</option>
+                <option value="br50">50px</option>
+            </select>
+        </div>
 
+        <div class="col-4">
+            <img src="image/1.jpg" style="width:100%" class="img-responsive" />
+        </div>
+        <div class="col-4">
+            <img src="image/2.jpg" style="width:100%" class="img-responsive" />
+        </div>
+        <div class="col-4">
+            <img src="image/3.jpg" style="width:100%" class="img-responsive" />
+        </div>
+    </div>
 </body>
 
 </html>
